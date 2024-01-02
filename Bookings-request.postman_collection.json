@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "6ba6a85e-5658-4189-bc8d-15f2bec9b3f3",
+		"name": "Bookings-request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15792307"
+	},
+	"item": [
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"25-A\",\r\n    \"type\": \"individual\",\r\n    \"description\": \"esta es una descripcion\",\r\n    \"pricePerNight\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/rooms/1"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/rooms/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"17qwwdfg625\",\r\n    \"type\": \"individual\",\r\n    \"description\": \"esta es una descripcion\",\r\n    \"capacity\": 1,\r\n    \"pricePerNight\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/rooms/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/clients/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "1234",
+								"username": "test"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"noe\",\r\n    \"lastName\":\"hernandez\",\r\n    \"email\":\"noe_hernandecom\",\r\n    \"phone\":\"5580860989\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clients"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "test",
+								"password": "1234"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/clients/2"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/clients"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "1234",
+								"username": "test"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":9,\r\n    \"clientId\":3,\r\n    \"startDate\":\"07/03/2020\",\r\n    \"endDate\":\"09/03/2020\",\r\n    \"totalNights\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/bookings"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/bookings/3"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/bookings/3?status=PENDINGss",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"3"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDINGss"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/bookings/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Integration-Test",
+			"item": [
+				{
+					"name": "SaveUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User is created\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"user_name\", \"admin\");\r",
+									"pm.collectionVariables.set(\"user_password\", \"temporal\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{user_name}}\",\r\n    \"password\":\"{{user_password}}\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users"
+					},
+					"response": []
+				},
+				{
+					"name": "SaveClient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Client is created\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"client_id\", jsonData.id);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{user_password}}",
+								"username": "{{user_name}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"noe\",\r\n    \"lastName\":\"hernandez\",\r\n    \"email\":\"noe_hernandez@gmail.com\",\r\n    \"phone\":\"5580860989\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clients"
+					},
+					"response": []
+				},
+				{
+					"name": "SaveRoom",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Room is created\", () => {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"room_id\", jsonData.id);\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{user_password}}",
+								"username": "{{user_name}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"17qwwdfg625\",\r\n    \"type\": \"individual\",\r\n    \"description\": \"esta es una descripcion\",\r\n    \"capacity\": 1,\r\n    \"pricePerNight\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "SaveBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Booking is created\", () => {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{user_password}}",
+								"username": "{{user_name}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":{{room_id}},\r\n    \"clientId\":{{client_id}},\r\n    \"startDate\":\"07/03/2020\",\r\n    \"endDate\":\"09/03/2020\",\r\n    \"totalNights\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/bookings"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "user_name",
+			"value": ""
+		},
+		{
+			"key": "user_password",
+			"value": ""
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": ""
+		},
+		{
+			"key": "room_id",
+			"value": ""
+		}
+	]
+}

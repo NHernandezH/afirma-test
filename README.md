@@ -41,4 +41,6 @@ esto generara un archivo **.jar** en el directorio **\target** dentro del proyec
 
 ## Documentacion generada
 
-para poder acceder a la documentacion generada siga el siguiente enlace **http://localhost:8080/swagger-ui/index.html** de igual forma se añade una pequeña seccion con la descripcion y uso de las apis en este [**enlace**](DOCUMENTATION.md)
+para poder acceder a la documentacion generada siga el siguiente enlace **http://localhost:8080/swagger-ui/index.html** 
+de igual forma se añade una pequeña seccion con la descripcion y uso de las apis en este [**enlace**](DOCUMENTATION.md)
+igual se agrega una coleccion de postman con las apis disponibles [**aqui**](Bookings-request.postman_collection.json)
