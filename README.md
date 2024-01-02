@@ -31,7 +31,7 @@ ejecute el archivo y se abrira en el navegador las estadisticas de covertura.
 ## Ejecucion del proyecto
 para ejecutar el proyecto dirigase a la carpeta del mismo desde la terminal y ejecute el comando
 ```
-mvn spring-boo:run
+mvn spring-boot:run
 ```
 o genere el ejecutable **.jar** con el comando:
 ```
